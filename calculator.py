@@ -16,7 +16,7 @@ class Calculator:
   def div(self, a, b):
     if b != 0:
       return a / b
-    else: print("cannot divide by 0")
+    else: return "cannot divide by 0"
   
 casio = Calculator()
 
