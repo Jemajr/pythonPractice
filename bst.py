@@ -37,8 +37,17 @@ class BST:
 
   # method to search for a value in a bst
   def search(self, val):
-    return self._search_recursive(val)
+    return self._search_recursive(self.root, val)
   
-  def _search_recursive(self, val):
-    ...
+  # Helper method to recursively search for a value in a bst and return the node if found
+  def _search_recursive(self, node, val):
+    # defining a base case
+    if not node or node.val == val:
+      return node
+
+    if val < node.val:
+      return self._search_recursive(node.left, val)
+    
+    elif val > node.val:
+      return self._search_recursive(node.right, val)
       
