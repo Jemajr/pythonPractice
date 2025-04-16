@@ -35,4 +35,10 @@ class BST:
       else:
         self._insert_recursive(node.right, val)
 
+  # method to search for a value in a bst
+  def search(self, val):
+    return self._search_recursive(val)
+  
+  def _search_recursive(self, val):
+    ...
       
