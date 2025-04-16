@@ -14,6 +14,7 @@ class BST:
   def __init__(self):
     self.root = None
 
+  # method to insert a new value into a bst
   def insert(self, val):
     if not self.root:
       self.root = Node(val)
@@ -51,3 +52,20 @@ class BST:
     elif val > node.val:
       return self._search_recursive(node.right, val)
       
+
+# Example Usage. Creating an instance of a BST
+bst = BST()
+
+# Insert values into the BST
+bst.insert(5)
+bst.insert(3)
+bst.insert(7)
+bst.insert(2)
+bst.insert(4)
+bst.insert(6)
+bst.insert(8)
+
+# Search for elements in the BST and print the results
+print("Searching for elements:")
+print(bst.search(4))  # Found, returns the node (4)
+print(bst.search(9))  # Not found, returns None 
