@@ -19,7 +19,20 @@ class BST:
       self.root = Node(val)
     
     else:
-      self.recursivelyInsert(self.root, val)
+      self._insert_recursive(self.root, val)
     
-  def recursivelyInsert(self, node, val):
-    ...
+  # Helper method to recursively insert a value into a BST
+  def _insert_recursive(self, node, val):
+    if val < node.val:  # value is less than current node, we'll go left
+      if not node.left:
+        node.left = Node(val)
+      else:
+        self._insert_recursive(node.left, val)
+
+    elif val > node.val:  # value is greater than current node, we'll go right
+      if not node.right:
+        node.right = Node(val)
+      else:
+        self._insert_recursive(node.right, val)
+
+      
